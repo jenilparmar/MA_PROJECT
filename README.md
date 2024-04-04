@@ -4,9 +4,9 @@ This repository contains a simple implementation of linear regression using Pyth
 ## Dependecies
 Make sure you have Python installed. You'll also need the following libraries:
 
-NumPy
-pandas
-scikit-learn
+NumPy<br>
+pandas<br>
+scikit-learn<br>
 You can install them using pip:
 ```bash
 pip install numpy pandas scikit-learn
