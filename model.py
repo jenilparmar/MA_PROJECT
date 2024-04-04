@@ -18,7 +18,7 @@ print(y)
 
 # Step 2: Model Training
 # Splitting data into training and testing sets
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.01, random_state=42)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.7, random_state=42)
 print(X_test,X_train)
 
 # Initialize the linear regression model
@@ -36,7 +36,7 @@ print("Accuracy:", accuracy)
 print("Regression Coefficients:", model.coef_)
 # Step 4: Prediction
 # Assuming new_data contains the features (Temperature, Humidity, Pressure, AirSpeed, RainToday) for a new day
-new_data = pd.DataFrame([[457, 70, 1015, 10, 1]], columns=['Temperature', 'Humidity', 'Pressure', 'AirSpeed', 'RainToday'])
+new_data = pd.DataFrame([[20.1,57,1011.7,33,0]], columns=['Temperature', 'Humidity', 'Pressure', 'AirSpeed', 'RainToday'])
 
 # Making prediction for the new day
 prediction = model.predict(new_data)
