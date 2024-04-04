@@ -1,7 +1,7 @@
 import pandas as pd
 from sklearn.model_selection import train_test_split
-from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import accuracy_score
+from sklearn.linear_model import LinearRegression
+from sklearn.metrics import r2_score
 
 # Step 1: Data Preparation
 # Load dataset
@@ -18,11 +18,11 @@ print(y)
 
 # Step 2: Model Training
 # Splitting data into training and testing sets
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.01, random_state=42)
 print(X_test,X_train)
 
 # Initialize the linear regression model
-model = LogisticRegression()
+model = LinearRegression()
 #feed the training data
 model.fit(X_train, y_train)
 
@@ -31,12 +31,12 @@ model.fit(X_train, y_train)
 y_pred = model.predict(X_test)
 
 # Evaluating model performance
-accuracy = accuracy_score(y_test, y_pred)
+accuracy = r2_score(y_test, y_pred)
 print("Accuracy:", accuracy)
-
+print("Regression Coefficients:", model.coef_)
 # Step 4: Prediction
 # Assuming new_data contains the features (Temperature, Humidity, Pressure, AirSpeed, RainToday) for a new day
-new_data = pd.DataFrame([[25, 70, 1015, 10, 1]], columns=['Temperature', 'Humidity', 'Pressure', 'AirSpeed', 'RainToday'])
+new_data = pd.DataFrame([[457, 70, 1015, 10, 1]], columns=['Temperature', 'Humidity', 'Pressure', 'AirSpeed', 'RainToday'])
 
 # Making prediction for the new day
 prediction = model.predict(new_data)
