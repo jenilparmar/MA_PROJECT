@@ -7,4 +7,4 @@ This repository contains a simple implementation of linear regression using Pyth
 ### Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/simple-linear-regression.git
+git clone [https://github.com/your-username/simple-linear-regression.git](https://github.com/MEET2231/MA_PROJECT.git)
