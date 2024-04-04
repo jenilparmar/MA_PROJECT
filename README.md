@@ -1,6 +1,20 @@
 # Simple Linear Regression Repository
 
 This repository contains a simple implementation of linear regression using Python. The model implemented achieves an accuracy of 81%.
+## Dependecies
+Make sure you have Python installed. You'll also need the following libraries:
+
+NumPy
+pandas
+scikit-learn
+You can install them using pip:
+```bash
+pip install numpy pandas scikit-learn
+```
+
+
+
+
 
 ## Usage
 
