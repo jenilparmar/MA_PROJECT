@@ -9,8 +9,8 @@ import matplotlib.pyplot as plt # type: ignore
 weather_data = pd.read_csv('data\JaipurFinalCleanData.csv')
 
 # Select features (X) and target variable (y)
-X = weather_data[['maxtempm', 'mintempm', 'maxhumidity_1', 'minhumidity_1','maxdewptm_1','mindewptm_1','maxpressurem_1','minpressurem_1','precipm_1']]  
-y = weather_data['meantempm']  
+X = weather_data[['meantempm','maxtempm', 'mintempm',  'minhumidity_1','maxdewptm_1','mindewptm_1','maxpressurem_1','minpressurem_1','precipm_1']]  
+y = weather_data['maxhumidity_1']  
 
 # Split the data into training and testing sets
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
@@ -23,7 +23,7 @@ model.fit(X_train, y_train)
 
 # Make predictions
 y_pred = model.predict(X_test)
-
+print("Maximum_Humidity : ",y_pred)
 
 # Calculate mean squared error
 mse = mean_squared_error(y_test, y_pred)
@@ -35,12 +35,12 @@ print("R-squared:", r_squared)
 
 # Plot actual vs predicted values
 plt.scatter(y_test, y_pred)
-plt.xlabel("Actual Mean_Tempareture (mm)")
-plt.ylabel("Predicted Mean_Tempareture (mm)")
-plt.title("Actual vs Predicted Tempareture")
+plt.xlabel("Actual Maximum_Humidity (g/m^3)")
+plt.ylabel("Predicted Maximum_Humidity (g/m^3)")
+plt.title("Actual vs Predicted Humidity")
 plt.show()
-new_data = pd.DataFrame([[41,27,5,12,12,-2,1009,1000,0]], columns=['maxtempm', 'mintempm', 'maxhumidity_1', 'minhumidity_1','maxdewptm_1','mindewptm_1','maxpressurem_1','minpressurem_1','precipm_1'])
+new_data = pd.DataFrame([[28,34,21,13,16,6,1011,1003,5]], columns=['meantempm','maxtempm', 'mintempm', 'minhumidity_1','maxdewptm_1','mindewptm_1','maxpressurem_1','minpressurem_1','precipm_1'])
 
 # Making prediction for the new day
 prediction = model.predict(new_data)
-print("Predicted Mean Tomorrow's Temperature:", prediction)
+print("Predicted Maximum_Humidity:", prediction)
