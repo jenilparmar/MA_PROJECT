@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predicred</title>
+    <style>
+        body{
+
+            
+         background-image: url("static\\tom-barrett-hgGplX3PFBg-unsplash.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        }
+        h2{
+            color: aqua;
+            font-size: 4em;
+            border: 2px solid aqua;
+            border-radius: 0.2em;
+            display: inline-block;
+            padding: 0.5em;
+            backdrop-filter: blur(2px);
+        
+        }
+        p{
+            color: #c7ff00;
+            font-size: 2em;
+            /* text-decoration: underline; */
+            backdrop-filter: blur(2px);
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <div>
+            <h2>Today's Predictions</h2>
+            
+            <p>Dew Point Prediction: {{ dewpt_prediction }}</p>
+            <p>Temperature Prediction: {{ temp_prediction }}</p>
+            <h2>Tomorrow's Predictions</h2>
+            
+            {% if rainfall == 0 %}
+            <p>Rainfall Prediction: No rain expected</p>
+            {% elif rainfall == 1 %}
+            <p>Rainfall Prediction: Rain expected</p>
+            {% endif %}
+        </div>
+    </center>
+</body>
+</html>

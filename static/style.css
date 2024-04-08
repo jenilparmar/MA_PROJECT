@@ -1,0 +1,83 @@
+*{
+    /* background-color: rgb(54, 48, 48); */
+}
+h1{
+    color: #c7ff00;
+    border: 2px solid #c7ff00;
+    width: 35vw;
+    border-radius: 0.5em;
+
+
+}
+body{
+background-image: url(tom-barrett-hgGplX3PFBg-unsplash.jpg);
+background-position: center;
+background-size: cover;
+background-repeat: no-repeat;
+
+}
+input:focus{
+  border: 2px solid black;
+}
+.container{
+    /* background-color: #c7ff00; */
+    width: 85vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.input{
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+
+}
+input{
+    background-color: transparent;
+    border: 2px solid #c7ff00;
+    border-radius: 5px;
+    height: 7vh; 
+    font-size: large;
+    color: #c7ff00;   
+transition: all ease 0.8s;
+
+}
+input:focus{
+    box-shadow: 0px 0px 20px #c7ff00;
+    border: 2px solid black;
+}
+input::placeholder{
+  color: #c7ff00;
+  align-self: center;
+  text-align: center;
+}
+button{
+  width: 15vw;
+  height: 10vh;
+  border: 2px solid #c7ff00;
+  border-radius: 0.4em;
+  background-color: transparent;
+  margin-top: 2em;
+  color: #c7ff00;
+/* background-color: #c7ff00; */
+font-size: 1.8em;
+transition: all ease 0.8s;
+font-weight: 600;
+}
+button p{
+ 
+  color: transparent;
+  margin: 0;
+}
+button:hover{
+  background-color: #c7ff00;
+  border: 2px solid black;
+  color: black;
+  box-shadow: 0px 0px 20px #c7ff00;
+
+ 
+}
+
+  h2{
+    color: #c7ff00;
+  }

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Prediction</title>
+</head>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+<body>
+    <form action="/" method="post">
+        <center>
+            <h1>Weather Prediction</h1>
+        </center>
+        <center>
+            <div class="container">
+                <div class="input">
+                   <input required type="number" name="maxtempm" placeholder="Maximum Temperature">
+                   <input required type="number" name="mintempm" placeholder="Minimum Temperature">
+                   <input required type="number" name="maxhumidity_1" placeholder="Maximum Humidity">
+                   <input required type="number" name="minhumidity_1" placeholder="Minimum Humidity">
+            
+                </div>
+                <div class="input required">
+                    <input required type="number" name="maxdewptm_1" placeholder="Maximum Dew Point">
+                    <input required type="number" name="mindewptm_1" placeholder="Minimum Dew Point">
+                    <input required type="number" name="maxpressurem_1" placeholder="Maximum Pressure">
+                    <input required type="number" name="minpressurem_1" placeholder="Minimum Pressure">
+                </div>
+            </div>
+        </center>
+        <center>
+            <button class="button" type="submit">
+               Button
+            </button>
+        </center>
+    </form>
+  
+</body>
+</html>
