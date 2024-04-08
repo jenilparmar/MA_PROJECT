@@ -1,7 +1,7 @@
 import pandas as pd # type: ignore
 from sklearn.model_selection import train_test_split # type: ignore
-from sklearn.linear_model import LinearRegression # type: ignore
-from sklearn.metrics import r2_score # type: ignore
+from sklearn.linear_model import LinearRegression,LogisticRegression # type: ignore
+from sklearn.metrics import r2_score,accuracy_score # type: ignore
 from sklearn.metrics import mean_squared_error, r2_score # type: ignore
 
 # Step 1: Data Preparation
@@ -119,6 +119,26 @@ def humidity(dataOP):
     # Making prediction for the new day
     prediction = model.predict(new_data)
     return prediction
+def rainfall(data):
+    weather_data = pd.read_csv("data\JaipurFinalCleanData _NextDay.csv")
+    X = weather_data[['maxtempm', 'mintempm', 'maxhumidity_1', 'minhumidity_1','maxdewptm_1','mindewptm_1','maxpressurem_1','minpressurem_1','precipm_2_B']]  
+    y = weather_data['precipm_2_B_nextday']  
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+    model = LogisticRegression()
+    model.fit(X_train, y_train)
+    y_pred = model.predict(X_test)
+    # print("Precipitation on test data : ",y_pred)
+    accuracy = accuracy_score(y_test, y_pred)
+    print(f"Accuracy: {accuracy}")
+    new_data = pd.DataFrame([data], columns=['maxtempm', 'mintempm', 'maxhumidity_1','minhumidity_1','maxdewptm_1','mindewptm_1','maxpressurem_1','minpressurem_1','precipm_2_B'])
+
+    # Making prediction for the new day
+    prediction = model.predict(new_data)
+    return prediction
+
+
+
+    pass
 
 data = [41,27,5,12,12,-2,1009,1000,0]
 K=temp(data)
@@ -127,3 +147,5 @@ D=dewpt(data)
 print(D)
 H=humidity(data)
 print(H)
+P = rainfall(data)
+print(P)
