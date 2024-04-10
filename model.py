@@ -86,8 +86,8 @@ def predict():
         temp_prediction = temp([maxtempm, mintempm, maxhumidity_1, minhumidity_1, maxdewptm_1, mindewptm_1, maxpressurem_1, minpressurem_1])
         flag = False
         if precipm_1== '':
-            r_fall = rainfall([maxtempm, mintempm, maxhumidity_1, minhumidity_1, maxdewptm_1, mindewptm_1, maxpressurem_1, minpressurem_1,precipm_1])
-            return render_template("predict.html", dewpt_prediction=round(dewpt_prediction[0],2), temp_prediction=round(temp_prediction[0],2),flag = flag,rainfall=r_fall[0])
+            # r_fall = rainfall([maxtempm, mintempm, maxhumidity_1, minhumidity_1, maxdewptm_1, mindewptm_1, maxpressurem_1, minpressurem_1,precipm_1])
+            return render_template("predict.html", dewpt_prediction=round(dewpt_prediction[0],2), temp_prediction=round(temp_prediction[0],2),flag = flag,rainfall=1)
             
         else:
             flag = True
