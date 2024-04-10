@@ -40,10 +40,12 @@
             <p>Temperature Prediction: {{ temp_prediction }}</p>
             <h2>Tomorrow's Predictions</h2>
             
+            {% if flag %}
             {% if rainfall == 0 %}
             <p>Rainfall Prediction: No rain expected</p>
             {% elif rainfall == 1 %}
             <p>Rainfall Prediction: Rain expected</p>
+            {% endif %}
             {% endif %}
         </div>
     </center>
