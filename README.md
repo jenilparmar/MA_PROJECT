@@ -16,7 +16,7 @@ scikit-learn<br>
 Flask<br>
 You can install them using pip:
 ```bash
-pip install numpy pandas scikit-learn
+pip install numpy pandas scikit-learn flask
 ```
 
 
