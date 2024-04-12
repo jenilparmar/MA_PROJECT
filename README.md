@@ -3,7 +3,7 @@
 This repository contains a simple implementation of linear regression using Python. The model implemented achieves the feat of predicting temperature humidity and dewpoint of today using linear regression and also predicts precipitation status for next day.
 
 ## Contributirs
-@+dhyeyraval<br>
+@dhyeyraval<br>
 @RACHITALAAD<br>
 @jenilparmar<br>
 
